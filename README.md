@@ -37,6 +37,11 @@ GPT-SoVITS 在合成过程中有时会丢失 10kHz 以上的平滑度。
 Pedalboard API 参考：查看所有支持的滤镜类型。
 Pyloudnorm 库：用于实现工业级响度检测。
 
+## 项目运行
+```py
+pip install -r requirements.txt
+python process.py
+```
 
 ## MIT License
 
