@@ -1,4 +1,4 @@
-input/*
-output/*
-!input/.gitkeep
-!output/.gitkeep
+input/*.mp3
+input/*.wav
+output/*.mp3
+output/*.wav
