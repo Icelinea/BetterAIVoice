@@ -1,6 +1,2 @@
-**/__pycache__
-/.idea
-/.vscode
-/.temp
-/.wav
-/.mp3
+/input/*
+/output/*

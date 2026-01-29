@@ -9,6 +9,7 @@ OUTPUT_DIR = "./output"      # 最终成品目录
 
 if not os.path.exists(OUTPUT_DIR): os.makedirs(OUTPUT_DIR)
 
+
 def process_audio(file_path, output_path):
     with AudioFile(file_path) as f:
         audio = f.read(f.frames)
@@ -51,9 +52,10 @@ def process_audio(file_path, output_path):
         f.write(normalized_audio)
 
 # --- 批量执行 ---
+output_lists = os.listdir(OUTPUT_DIR)
 for file_name in os.listdir(INPUT_DIR):
-    if file_name.endswith(('.wav', '.mp3')):
+    if file_name.endswith(('.wav', '.mp3')) and file_name not in output_lists:
         print(f"正在处理: {file_name}...")
         process_audio(os.path.join(INPUT_DIR, file_name), os.path.join(OUTPUT_DIR, file_name))
 
-print("\n所有音频已美化完成")
+print("\n----- 所有音频已美化完成 -----")
