@@ -30,7 +30,7 @@ GPT-SoVITS 在合成过程中有时会丢失 10kHz 以上的平滑度。
 ## 本项目耦合流程
 高通滤波 -> 250Hz 磁性增强 -> 齿音压制 -> 空间建模 -> 响度标准化。
 关于 Adobe Podcast (方案1)：该工具目前无官方 API。脚本中通过 PeakFilter 针对性修复了 7kHz 齿音和 300Hz 的厚度，这能在本地最大程度模拟其效果。如果必须使用 Adobe，建议先批量通过 Python 导出，手动上传 Adobe 官网，再下载。
-关于空间建模 (方案3)：脚本使用了 pedalboard.Reverb。若你已安装 Valhalla Supermassive，可将代码改为 VSTPlugin(path_to_vst) 直接调用该插件的特定预设。
+关于空间建模 (方案3)：脚本使用了 pedalboard.Reverb。若已安装 Valhalla Supermassive，可将代码改为 VSTPlugin(path_to_vst) 直接调用该插件的特定预设。
 关于 Auphonic (方案4)：代码引入了 pyloudnorm 库，它是目前公认最精准的响度标准化 Python 库，能完美实现 Auphonic 的“响度规范化”功能。
 Pedalboard API 参考：查看所有支持的滤镜类型。
 Pyloudnorm 库：用于实现工业级响度检测。
